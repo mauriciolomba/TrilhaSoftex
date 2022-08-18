@@ -1,6 +1,6 @@
 package com.mauriciolomba.trilhasoftex
 
-data class User(val firstName: String?,val lastName: String?)
+data class User(val firstName: String?, val lastName: String?)
 
 // função de extensão
 fun User.getFormattedName(): String {
