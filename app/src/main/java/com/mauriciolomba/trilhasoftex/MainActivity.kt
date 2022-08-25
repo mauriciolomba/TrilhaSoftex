@@ -1,5 +1,6 @@
 package com.mauriciolomba.trilhasoftex
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -35,9 +36,20 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonSalvar.setOnClickListener {
             Log.d(TAG, "Botão Salvar clicado")
-            Toast.makeText(this, "Salvo", Toast.LENGTH_SHORT).show()
-            limpaCampos()
+            var nome = binding.editTextNome.text.toString()
+            var email = binding.editTextEmail.text.toString()
+            var telefone = binding.editTextTelefone.text.toString()
+            //limpaCampos()
+            val intent = Intent(this, DetailsActivity::class.java).apply {
+                putExtra("nome", nome)
+                putExtra("email", email)
+                putExtra("telefone", telefone)
+            }
+            Toast.makeText(this, "Nome: ${nome} E-mail: ${email} Telefone: ${telefone}", Toast.LENGTH_SHORT).show()
+            startActivity(intent)
         }
+
+
     }
 
     private fun limpaCampos() {
