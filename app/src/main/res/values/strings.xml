@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TrilhaSoftex</string>
+    <string name="nome">Nome</string>
+    <string name="email">E-mail</string>
+    <string name="telefone">Telefone</string>
+    <string name="limpar">Limpar</string>
+    <string name="salvar">Salvar</string>
+    <string name="cadastro_de_usuario">Cadastro de Usuário</string>
 </resources>

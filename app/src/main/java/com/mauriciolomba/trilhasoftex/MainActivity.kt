@@ -7,44 +7,42 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.mauriciolomba.trilhasoftex.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private val TAG = "MainActivity"
+    private lateinit var binding : ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        //setContentView(R.layout.activity_main)
 
-        //binding = MainActivityBinding.inflate(layoutInflater)
-        //val view = binding.root
-        //setContentView(view)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        val editTextNome =  findViewById<EditText>(R.id.editTextNome)
-        val editTextEmail =  findViewById<EditText>(R.id.editTextEmail)
-        val editTextTelefone=  findViewById<EditText>(R.id.editTextTelefone)
-        val buttonLimpar = findViewById<Button>(R.id.buttonLimpar)
-        val buttonSalvar = findViewById<Button>(R.id.buttonSalvar)
+//        val editTextNome =  findViewById<EditText>(R.id.editTextNome)
+//        val editTextEmail =  findViewById<EditText>(R.id.editTextEmail)
+//        val editTextTelefone=  findViewById<EditText>(R.id.editTextTelefone)
+//        val buttonLimpar = findViewById<Button>(R.id.buttonLimpar)
+//        val buttonSalvar = findViewById<Button>(R.id.buttonSalvar)
 
-        buttonLimpar.setOnClickListener {
+        binding.buttonLimpar.setOnClickListener {
             Log.d(TAG, "Botão Limpar clicado")
-            limpaCampos(editTextNome, editTextEmail, editTextTelefone)
+            limpaCampos()
         }
 
-        buttonSalvar.setOnClickListener {
+        binding.buttonSalvar.setOnClickListener {
             Log.d(TAG, "Botão Salvar clicado")
             Toast.makeText(this, "Salvo", Toast.LENGTH_SHORT).show()
-            limpaCampos(editTextNome, editTextEmail, editTextTelefone)
+            limpaCampos()
         }
     }
 
-    private fun limpaCampos(
-        editTextNome: EditText,
-        editTextEmail: EditText,
-        editTextTelefone: EditText
-    ) {
-        editTextNome.text.clear()
-        editTextEmail.text.clear()
-        editTextTelefone.text.clear()
+    private fun limpaCampos() {
+        binding.editTextNome.text.clear()
+        binding.editTextEmail.text.clear()
+        binding.editTextTelefone.text.clear()
     }
 }

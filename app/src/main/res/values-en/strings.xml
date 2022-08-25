@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TrilhaSoftex</string>
+    <string name="nome">Name</string>
+    <string name="email">E-mail</string>
+    <string name="telefone">Telephone</string>
+    <string name="limpar">Clean</string>
+    <string name="salvar">Save</string>
+    <string name="cadastro_de_usuario">Create User</string>
+</resources>
